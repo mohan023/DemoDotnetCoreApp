@@ -23,8 +23,8 @@ namespace DemoDotnetCoreApplication.Controllers
 
         public IActionResult Index()
         {
-            
-            return View(_congi["MyKey"].ToString());
+            ViewData["MyKey"] = _congi["MyKey"].ToString();
+            return View();
         }
 
         public IActionResult Privacy()
