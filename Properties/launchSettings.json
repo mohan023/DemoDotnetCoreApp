@@ -12,7 +12,7 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "MyKey": "Value From Env Variable",
+        "MYKEY": " value from env",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },

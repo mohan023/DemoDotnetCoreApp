@@ -18,12 +18,14 @@ namespace DemoDotnetCoreApplication.Controllers
         public HomeController(ILogger<HomeController> logger, IConfiguration congi )
         {
             _logger = logger;
+            _logger.LogInformation("Home Contoller Executed");
+            _logger.LogDebug("Home Controller Debug Message");
             _congi = congi;
         }
 
         public IActionResult Index()
         {
-            ViewData["MyKey"] = _congi["MyKey"].ToString();
+            ViewData["MYKEY"] = _congi["MYKEY"].ToString();
             return View();
         }
 
