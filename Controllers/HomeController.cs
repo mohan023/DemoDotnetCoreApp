@@ -25,7 +25,7 @@ namespace DemoDotnetCoreApplication.Controllers
 
         public IActionResult Index()
         {
-            ViewData["MYKEY"] = _congi["MYKEY"].ToString();
+            ViewData["MyKey"] = _congi["MyKey"].ToString();
             return View();
         }
 
