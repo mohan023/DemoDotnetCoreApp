@@ -26,6 +26,7 @@ namespace DemoDotnetCoreApplication.Controllers
         public IActionResult Index()
         {
             ViewData["MyKey"] = _congi["MyKey"].ToString();
+            ViewData["ConnectionString"] = _congi["ConnectionString"].ToString();
             return View();
         }
 
