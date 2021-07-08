@@ -42,6 +42,9 @@ namespace DemoDotnetCoreApplication
 
             app.UseAuthorization();
 
+            app.UseMiddleware();
+            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

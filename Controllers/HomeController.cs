@@ -28,7 +28,7 @@ namespace DemoDotnetCoreApplication.Controllers
             try
             {
                 ViewData["MyKey"] = _congi["MyKey"].ToString();
-                ViewData["ConnectionString"] = _congi["ConnectionString"].ToString();
+                ViewData["ConnectionString"] = "HardCoded";
             }
             catch (Exception ex)
             {
