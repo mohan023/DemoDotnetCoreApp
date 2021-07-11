@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DemoDotnetCoreApplication.Models;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace DemoDotnetCoreApplication.Controllers
 {
@@ -21,6 +22,8 @@ namespace DemoDotnetCoreApplication.Controllers
             _logger.LogInformation("Home Contoller Executed");
             _logger.LogDebug("Home Controller Debug Message");
             _congi = congi;
+
+            
         }
 
         public IActionResult Index()
@@ -29,6 +32,15 @@ namespace DemoDotnetCoreApplication.Controllers
             {
                 ViewData["MyKey"] = _congi["MyKey"].ToString();
                 ViewData["ConnectionString"] = "HardCoded";
+                if (System.IO.File.Exists("/empty-dir-demo/testfile.txt"))
+                {
+                    // This path is a file
+                    ViewData["FileContent"] = System.IO.File.ReadAllText("/empty-dir-demo/testfile.txt");
+                }
+                else
+                {
+                    ViewData["FileContent"] = "File Not Found";
+                }
             }
             catch (Exception ex)
             {
